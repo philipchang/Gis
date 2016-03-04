@@ -1,0 +1,867 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0CCADEE8-5864-4B22-A636-BED16B4FAC04}</ProjectGuid>
+    <RootNamespace>geos</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)\build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)\build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)\lib\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)\build\$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./../geos/inc/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;WIN32_LEAN_AND_MEAN;NOMINMAX;NOGDI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./../geos/inc/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;WIN32_LEAN_AND_MEAN;NOMINMAX;NOGDI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./../geos/inc/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64;_DEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;WIN32_LEAN_AND_MEAN;NOMINMAX;NOGDI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>
+      </AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./../geos/inc/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN64;NDEBUG;_LIB;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;WIN32_LEAN_AND_MEAN;NOMINMAX;NOGDI;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4819;4996;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\inlines.cpp" />
+    <ClCompile Include="src\algorithm\Angle.cpp" />
+    <ClCompile Include="src\algorithm\BoundaryNodeRule.cpp" />
+    <ClCompile Include="src\algorithm\CentroidArea.cpp" />
+    <ClCompile Include="src\algorithm\CentroidLine.cpp" />
+    <ClCompile Include="src\algorithm\CentroidPoint.cpp" />
+    <ClCompile Include="src\algorithm\CGAlgorithms.cpp" />
+    <ClCompile Include="src\algorithm\ConvexHull.cpp" />
+    <ClCompile Include="src\algorithm\HCoordinate.cpp" />
+    <ClCompile Include="src\algorithm\InteriorPointArea.cpp" />
+    <ClCompile Include="src\algorithm\InteriorPointLine.cpp" />
+    <ClCompile Include="src\algorithm\InteriorPointPoint.cpp" />
+    <ClCompile Include="src\algorithm\LineIntersector.cpp" />
+    <ClCompile Include="src\algorithm\MCPointInRing.cpp" />
+    <ClCompile Include="src\algorithm\MinimumDiameter.cpp" />
+    <ClCompile Include="src\algorithm\NotRepresentableException.cpp" />
+    <ClCompile Include="src\algorithm\PointLocator.cpp" />
+    <ClCompile Include="src\algorithm\RayCrossingCounter.cpp" />
+    <ClCompile Include="src\algorithm\RobustDeterminant.cpp" />
+    <ClCompile Include="src\algorithm\SimplePointInRing.cpp" />
+    <ClCompile Include="src\algorithm\SIRtreePointInRing.cpp" />
+    <ClCompile Include="src\algorithm\distance\DiscreteHausdorffDistance.cpp" />
+    <ClCompile Include="src\algorithm\distance\DistanceToPoint.cpp" />
+    <ClCompile Include="src\algorithm\locate\IndexedPointInAreaLocator.cpp" />
+    <ClCompile Include="src\algorithm\locate\PointOnGeometryLocator.cpp" />
+    <ClCompile Include="src\algorithm\locate\SimplePointInAreaLocator.cpp" />
+    <ClCompile Include="src\geom\Coordinate.cpp" />
+    <ClCompile Include="src\geom\CoordinateArraySequence.cpp" />
+    <ClCompile Include="src\geom\CoordinateArraySequenceFactory.cpp" />
+    <ClCompile Include="src\geom\CoordinateSequence.cpp" />
+    <ClCompile Include="src\geom\CoordinateSequenceFactory.cpp" />
+    <ClCompile Include="src\geom\Dimension.cpp" />
+    <ClCompile Include="src\geom\Envelope.cpp" />
+    <ClCompile Include="src\geom\Geometry.cpp" />
+    <ClCompile Include="src\geom\GeometryCollection.cpp" />
+    <ClCompile Include="src\geom\GeometryComponentFilter.cpp" />
+    <ClCompile Include="src\geom\GeometryFactory.cpp" />
+    <ClCompile Include="src\geom\GeometryList.cpp" />
+    <ClCompile Include="src\geom\IntersectionMatrix.cpp" />
+    <ClCompile Include="src\geom\LinearRing.cpp" />
+    <ClCompile Include="src\geom\LineSegment.cpp" />
+    <ClCompile Include="src\geom\LineString.cpp" />
+    <ClCompile Include="src\geom\Location.cpp" />
+    <ClCompile Include="src\geom\MultiLineString.cpp" />
+    <ClCompile Include="src\geom\MultiPoint.cpp" />
+    <ClCompile Include="src\geom\MultiPolygon.cpp" />
+    <ClCompile Include="src\geom\Point.cpp" />
+    <ClCompile Include="src\geom\Polygon.cpp" />
+    <ClCompile Include="src\geom\PrecisionModel.cpp" />
+    <ClCompile Include="src\geom\Triangle.cpp" />
+    <ClCompile Include="src\geom\util\CoordinateOperation.cpp" />
+    <ClCompile Include="src\geom\util\GeometryEditor.cpp" />
+    <ClCompile Include="src\geom\util\GeometryTransformer.cpp" />
+    <ClCompile Include="src\geom\util\ShortCircuitedGeometryVisitor.cpp" />
+    <ClCompile Include="src\geomgraph\Depth.cpp" />
+    <ClCompile Include="src\geomgraph\DirectedEdge.cpp" />
+    <ClCompile Include="src\geomgraph\DirectedEdgeStar.cpp" />
+    <ClCompile Include="src\geomgraph\Edge.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeEnd.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeEndStar.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeIntersection.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeIntersectionList.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeList.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeNodingValidator.cpp" />
+    <ClCompile Include="src\geomgraph\EdgeRing.cpp" />
+    <ClCompile Include="src\geomgraph\GeometryGraph.cpp" />
+    <ClCompile Include="src\geomgraph\GraphComponent.cpp" />
+    <ClCompile Include="src\geomgraph\Label.cpp" />
+    <ClCompile Include="src\geomgraph\Node.cpp" />
+    <ClCompile Include="src\geomgraph\NodeFactory.cpp" />
+    <ClCompile Include="src\geomgraph\NodeMap.cpp" />
+    <ClCompile Include="src\geomgraph\PlanarGraph.cpp" />
+    <ClCompile Include="src\geomgraph\Position.cpp" />
+    <ClCompile Include="src\geomgraph\Quadrant.cpp" />
+    <ClCompile Include="src\geomgraph\TopologyLocation.cpp" />
+    <ClCompile Include="src\geomgraph\index\MonotoneChainEdge.cpp" />
+    <ClCompile Include="src\geomgraph\index\MonotoneChainIndexer.cpp" />
+    <ClCompile Include="src\geomgraph\index\SegmentIntersector.cpp" />
+    <ClCompile Include="src\geomgraph\index\SimpleEdgeSetIntersector.cpp" />
+    <ClCompile Include="src\geomgraph\index\SimpleMCSweepLineIntersector.cpp" />
+    <ClCompile Include="src\geomgraph\index\SimpleSweepLineIntersector.cpp" />
+    <ClCompile Include="src\geomgraph\index\SweepLineEvent.cpp" />
+    <ClCompile Include="src\geomgraph\index\SweepLineSegment.cpp" />
+    <ClCompile Include="src\index\bintree\Bintree.cpp" />
+    <ClCompile Include="src\index\bintree\Interval.cpp" />
+    <ClCompile Include="src\index\bintree\Key.cpp" />
+    <ClCompile Include="src\index\bintree\Node.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\bintree\NodeBase.cpp" />
+    <ClCompile Include="src\index\bintree\Root.cpp" />
+    <ClCompile Include="src\index\chain\MonotoneChain.cpp" />
+    <ClCompile Include="src\index\chain\MonotoneChainBuilder.cpp" />
+    <ClCompile Include="src\index\chain\MonotoneChainOverlapAction.cpp" />
+    <ClCompile Include="src\index\chain\MonotoneChainSelectAction.cpp" />
+    <ClCompile Include="src\index\quadtree\DoubleBits.cpp" />
+    <ClCompile Include="src\index\quadtree\IntervalSize.cpp" />
+    <ClCompile Include="src\index\quadtree\Key.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\quadtree\Node.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)2.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)2.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\quadtree\NodeBase.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\quadtree\Quadtree.cpp" />
+    <ClCompile Include="src\index\quadtree\Root.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\strtree\AbstractNode.cpp" />
+    <ClCompile Include="src\index\strtree\AbstractSTRtree.cpp" />
+    <ClCompile Include="src\index\strtree\Interval.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\strtree\ItemBoundable.cpp" />
+    <ClCompile Include="src\index\strtree\SIRtree.cpp" />
+    <ClCompile Include="src\index\strtree\STRtree.cpp" />
+    <ClCompile Include="src\index\sweepline\SweepLineEvent.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\index\sweepline\SweepLineIndex.cpp" />
+    <ClCompile Include="src\index\sweepline\SweepLineInterval.cpp" />
+    <ClCompile Include="src\io\ByteOrderDataInStream.cpp" />
+    <ClCompile Include="src\io\ByteOrderValues.cpp" />
+    <ClCompile Include="src\io\CLocalizer.cpp" />
+    <ClCompile Include="src\io\ParseException.cpp" />
+    <ClCompile Include="src\io\StringTokenizer.cpp" />
+    <ClCompile Include="src\io\Unload.cpp" />
+    <ClCompile Include="src\io\WKBReader.cpp" />
+    <ClCompile Include="src\io\WKBWriter.cpp" />
+    <ClCompile Include="src\io\WKTReader.cpp" />
+    <ClCompile Include="src\io\WKTWriter.cpp" />
+    <ClCompile Include="src\io\Writer.cpp" />
+    <ClCompile Include="src\noding\BasicSegmentString.cpp" />
+    <ClCompile Include="src\noding\FastNodingValidator.cpp" />
+    <ClCompile Include="src\noding\IntersectionAdder.cpp" />
+    <ClCompile Include="src\noding\IntersectionFinderAdder.cpp" />
+    <ClCompile Include="src\noding\IteratedNoder.cpp" />
+    <ClCompile Include="src\noding\MCIndexNoder.cpp" />
+    <ClCompile Include="src\noding\NodedSegmentString.cpp" />
+    <ClCompile Include="src\noding\NodingValidator.cpp" />
+    <ClCompile Include="src\noding\Octant.cpp" />
+    <ClCompile Include="src\noding\OrientedCoordinateArray.cpp" />
+    <ClCompile Include="src\noding\ScaledNoder.cpp" />
+    <ClCompile Include="src\noding\SegmentNode.cpp" />
+    <ClCompile Include="src\noding\SegmentNodeList.cpp" />
+    <ClCompile Include="src\noding\SegmentString.cpp" />
+    <ClCompile Include="src\noding\SimpleNoder.cpp" />
+    <ClCompile Include="src\noding\SingleInteriorIntersectionFinder.cpp" />
+    <ClCompile Include="src\noding\snapround\HotPixel.cpp" />
+    <ClCompile Include="src\noding\snapround\MCIndexPointSnapper.cpp" />
+    <ClCompile Include="src\noding\snapround\MCIndexSnapRounder.cpp" />
+    <ClCompile Include="src\noding\snapround\SimpleSnapRounder.cpp" />
+    <ClCompile Include="src\operation\GeometryGraphOperation.cpp" />
+    <ClCompile Include="src\operation\IsSimpleOp.cpp" />
+    <ClCompile Include="src\operation\buffer\BufferBuilder.cpp" />
+    <ClCompile Include="src\operation\buffer\BufferInputLineSimplifier.cpp" />
+    <ClCompile Include="src\operation\buffer\BufferOp.cpp" />
+    <ClCompile Include="src\operation\buffer\BufferParameters.cpp" />
+    <ClCompile Include="src\operation\buffer\BufferSubgraph.cpp" />
+    <ClCompile Include="src\operation\buffer\OffsetCurveBuilder.cpp" />
+    <ClCompile Include="src\operation\buffer\OffsetCurveSetBuilder.cpp" />
+    <ClCompile Include="src\operation\buffer\RightmostEdgeFinder.cpp" />
+    <ClCompile Include="src\operation\buffer\SubgraphDepthLocater.cpp" />
+    <ClCompile Include="src\operation\distance\ConnectedElementLocationFilter.cpp" />
+    <ClCompile Include="src\operation\distance\ConnectedElementPointFilter.cpp" />
+    <ClCompile Include="src\operation\distance\DistanceOp.cpp" />
+    <ClCompile Include="src\operation\distance\GeometryLocation.cpp" />
+    <ClCompile Include="src\operation\linemerge\EdgeString.cpp" />
+    <ClCompile Include="src\operation\linemerge\LineMergeDirectedEdge.cpp" />
+    <ClCompile Include="src\operation\linemerge\LineMergeEdge.cpp" />
+    <ClCompile Include="src\operation\linemerge\LineMergeGraph.cpp" />
+    <ClCompile Include="src\operation\linemerge\LineMerger.cpp" />
+    <ClCompile Include="src\operation\linemerge\LineSequencer.cpp" />
+    <ClCompile Include="src\operation\valid\ConnectedInteriorTester.cpp" />
+    <ClCompile Include="src\operation\valid\ConsistentAreaTester.cpp" />
+    <ClCompile Include="src\operation\valid\IndexedNestedRingTester.cpp" />
+    <ClCompile Include="src\operation\valid\IsValidOp.cpp" />
+    <ClCompile Include="src\operation\valid\QuadtreeNestedRingTester.cpp" />
+    <ClCompile Include="src\operation\valid\RepeatedPointTester.cpp" />
+    <ClCompile Include="src\operation\valid\SimpleNestedRingTester.cpp" />
+    <ClCompile Include="src\operation\valid\SweeplineNestedRingTester.cpp" />
+    <ClCompile Include="src\operation\valid\TopologyValidationError.cpp" />
+    <ClCompile Include="src\operation\relate\EdgeEndBuilder.cpp" />
+    <ClCompile Include="src\operation\relate\EdgeEndBundle.cpp" />
+    <ClCompile Include="src\operation\relate\EdgeEndBundleStar.cpp" />
+    <ClCompile Include="src\operation\relate\RelateComputer.cpp" />
+    <ClCompile Include="src\operation\relate\RelateNode.cpp" />
+    <ClCompile Include="src\operation\relate\RelateNodeFactory.cpp" />
+    <ClCompile Include="src\operation\relate\RelateNodeGraph.cpp" />
+    <ClCompile Include="src\operation\relate\RelateOp.cpp" />
+    <ClCompile Include="src\operation\predicate\RectangleContains.cpp" />
+    <ClCompile Include="src\operation\predicate\RectangleIntersects.cpp" />
+    <ClCompile Include="src\operation\predicate\SegmentIntersectionTester.cpp" />
+    <ClCompile Include="src\operation\polygonize\EdgeRing.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\operation\polygonize\PolygonizeDirectedEdge.cpp" />
+    <ClCompile Include="src\operation\polygonize\PolygonizeEdge.cpp" />
+    <ClCompile Include="src\operation\polygonize\PolygonizeGraph.cpp" />
+    <ClCompile Include="src\operation\polygonize\Polygonizer.cpp" />
+    <ClCompile Include="src\operation\overlay\EdgeSetNoder.cpp" />
+    <ClCompile Include="src\operation\overlay\ElevationMatrix.cpp" />
+    <ClCompile Include="src\operation\overlay\ElevationMatrixCell.cpp" />
+    <ClCompile Include="src\operation\overlay\LineBuilder.cpp" />
+    <ClCompile Include="src\operation\overlay\MaximalEdgeRing.cpp" />
+    <ClCompile Include="src\operation\overlay\MinimalEdgeRing.cpp" />
+    <ClCompile Include="src\operation\overlay\OffsetPointGenerator.cpp" />
+    <ClCompile Include="src\operation\overlay\OverlayNodeFactory.cpp" />
+    <ClCompile Include="src\operation\overlay\OverlayOp.cpp" />
+    <ClCompile Include="src\operation\overlay\OverlayResultValidator.cpp" />
+    <ClCompile Include="src\operation\overlay\PointBuilder.cpp" />
+    <ClCompile Include="src\operation\overlay\PolygonBuilder.cpp" />
+    <ClCompile Include="src\operation\overlay\snap\GeometrySnapper.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\operation\overlay\snap\LineStringSnapper.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\operation\overlay\snap\SnapIfNeededOverlayOp.cpp" />
+    <ClCompile Include="src\operation\overlay\snap\SnapOverlayOp.cpp" />
+    <ClCompile Include="src\operation\overlay\validate\FuzzyPointLocator.cpp" />
+    <ClCompile Include="src\operation\overlay\validate\OffsetPointGenerator.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\operation\overlay\validate\OverlayResultValidator.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\DirectedEdge.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\DirectedEdgeStar.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\Edge.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\Node.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)3.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)3.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\NodeMap.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\PlanarGraph.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="src\planargraph\Subgraph.cpp" />
+    <ClCompile Include="src\planargraph\algorithm\ConnectedSubgraphFinder.cpp" />
+    <ClCompile Include="src\precision\CommonBits.cpp" />
+    <ClCompile Include="src\precision\CommonBitsOp.cpp" />
+    <ClCompile Include="src\precision\CommonBitsRemover.cpp" />
+    <ClCompile Include="src\precision\EnhancedPrecisionOp.cpp" />
+    <ClCompile Include="src\precision\GeometrySnapper.cpp" />
+    <ClCompile Include="src\precision\LineStringSnapper.cpp" />
+    <ClCompile Include="src\precision\SimpleGeometryPrecisionReducer.cpp" />
+    <ClCompile Include="src\simplify\DouglasPeuckerLineSimplifier.cpp" />
+    <ClCompile Include="src\simplify\DouglasPeuckerSimplifier.cpp" />
+    <ClCompile Include="src\simplify\LineSegmentIndex.cpp" />
+    <ClCompile Include="src\simplify\TaggedLineSegment.cpp" />
+    <ClCompile Include="src\simplify\TaggedLinesSimplifier.cpp" />
+    <ClCompile Include="src\simplify\TaggedLineString.cpp" />
+    <ClCompile Include="src\simplify\TaggedLineStringSimplifier.cpp" />
+    <ClCompile Include="src\simplify\TopologyPreservingSimplifier.cpp" />
+    <ClCompile Include="src\util\Assert.cpp" />
+    <ClCompile Include="src\util\GeometricShapeFactory.cpp" />
+    <ClCompile Include="src\util\math.cpp" />
+    <ClCompile Include="src\util\Profiler.cpp" />
+    <ClCompile Include="capi\geos_c.cpp" />
+    <ClCompile Include="capi\geos_ts_c.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\operation\buffer\OffsetCurveVertexList.h" />
+    <ClInclude Include="inc\geos.h" />
+    <ClInclude Include="inc\geos\geom.h" />
+    <ClInclude Include="inc\geos\geomgraph.h" />
+    <ClInclude Include="inc\geos\geomgraphindex.h" />
+    <ClInclude Include="inc\geos\geomUtil.h" />
+    <ClInclude Include="inc\geos\geosAlgorithm.h" />
+    <ClInclude Include="inc\geos\indexBintree.h" />
+    <ClInclude Include="inc\geos\indexChain.h" />
+    <ClInclude Include="inc\geos\indexQuadtree.h" />
+    <ClInclude Include="inc\geos\indexStrtree.h" />
+    <ClInclude Include="inc\geos\indexSweepline.h" />
+    <ClInclude Include="inc\geos\inline.h" />
+    <ClInclude Include="inc\geos\io.h" />
+    <ClInclude Include="inc\geos\noding.h" />
+    <ClInclude Include="inc\geos\nodingSnapround.h" />
+    <ClInclude Include="inc\geos\opBuffer.h" />
+    <ClInclude Include="inc\geos\opDistance.h" />
+    <ClInclude Include="inc\geos\operation.h" />
+    <ClInclude Include="inc\geos\opLinemerge.h" />
+    <ClInclude Include="inc\geos\opOverlay.h" />
+    <ClInclude Include="inc\geos\opPolygonize.h" />
+    <ClInclude Include="inc\geos\opPredicate.h" />
+    <ClInclude Include="inc\geos\opRelate.h" />
+    <ClInclude Include="inc\geos\opValid.h" />
+    <ClInclude Include="inc\geos\planargraph.h" />
+    <ClInclude Include="inc\geos\platform.h" />
+    <ClInclude Include="inc\geos\precision.h" />
+    <ClInclude Include="inc\geos\profiler.h" />
+    <ClInclude Include="inc\geos\spatialIndex.h" />
+    <ClInclude Include="inc\geos\timeval.h" />
+    <ClInclude Include="inc\geos\unload.h" />
+    <ClInclude Include="inc\geos\util.h" />
+    <ClInclude Include="inc\geos\version.h" />
+    <ClInclude Include="inc\geos\algorithm\CentralEndpointIntersector.h" />
+    <ClInclude Include="inc\geos\algorithm\CentroidArea.h" />
+    <ClInclude Include="inc\geos\algorithm\CentroidLine.h" />
+    <ClInclude Include="inc\geos\algorithm\CentroidPoint.h" />
+    <ClInclude Include="inc\geos\algorithm\CGAlgorithms.h" />
+    <ClInclude Include="inc\geos\algorithm\ConvexHull.h" />
+    <ClInclude Include="inc\geos\algorithm\HCoordinate.h" />
+    <ClInclude Include="inc\geos\algorithm\InteriorPointArea.h" />
+    <ClInclude Include="inc\geos\algorithm\InteriorPointLine.h" />
+    <ClInclude Include="inc\geos\algorithm\InteriorPointPoint.h" />
+    <ClInclude Include="inc\geos\algorithm\LineIntersector.h" />
+    <ClInclude Include="inc\geos\algorithm\MCPointInRing.h" />
+    <ClInclude Include="inc\geos\algorithm\MinimumDiameter.h" />
+    <ClInclude Include="inc\geos\algorithm\NotRepresentableException.h" />
+    <ClInclude Include="inc\geos\algorithm\PointInRing.h" />
+    <ClInclude Include="inc\geos\algorithm\PointLocator.h" />
+    <ClInclude Include="inc\geos\algorithm\RobustDeterminant.h" />
+    <ClInclude Include="inc\geos\algorithm\SimplePointInAreaLocator.h" />
+    <ClInclude Include="inc\geos\algorithm\SimplePointInRing.h" />
+    <ClInclude Include="inc\geos\algorithm\SIRtreePointInRing.h" />
+    <ClInclude Include="inc\geos\geom\BinaryOp.h" />
+    <ClInclude Include="inc\geos\geom\Coordinate.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateArraySequence.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateArraySequenceFactory.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateFilter.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateList.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateSequence.h" />
+    <ClInclude Include="inc\geos\geom\CoordinateSequenceFactory.h" />
+    <ClInclude Include="inc\geos\geom\Dimension.h" />
+    <ClInclude Include="inc\geos\geom\Envelope.h" />
+    <ClInclude Include="inc\geos\geom\Geometry.h" />
+    <ClInclude Include="inc\geos\geom\GeometryCollection.h" />
+    <ClInclude Include="inc\geos\geom\GeometryComponentFilter.h" />
+    <ClInclude Include="inc\geos\geom\GeometryFactory.h" />
+    <ClInclude Include="inc\geos\geom\GeometryFilter.h" />
+    <ClInclude Include="inc\geos\geom\GeometryList.h" />
+    <ClInclude Include="inc\geos\geom\IntersectionMatrix.h" />
+    <ClInclude Include="inc\geos\geom\LinearRing.h" />
+    <ClInclude Include="inc\geos\geom\LineSegment.h" />
+    <ClInclude Include="inc\geos\geom\LineString.h" />
+    <ClInclude Include="inc\geos\geom\Location.h" />
+    <ClInclude Include="inc\geos\geom\MultiLineString.h" />
+    <ClInclude Include="inc\geos\geom\MultiPoint.h" />
+    <ClInclude Include="inc\geos\geom\MultiPolygon.h" />
+    <ClInclude Include="inc\geos\geom\Point.h" />
+    <ClInclude Include="inc\geos\geom\Polygon.h" />
+    <ClInclude Include="inc\geos\geom\PrecisionModel.h" />
+    <ClInclude Include="inc\geos\geom\Triangle.h" />
+    <ClInclude Include="inc\geos\geom\util\CoordinateOperation.h" />
+    <ClInclude Include="inc\geos\geom\util\GeometryEditor.h" />
+    <ClInclude Include="inc\geos\geom\util\GeometryEditorOperation.h" />
+    <ClInclude Include="inc\geos\geom\util\GeometryTransformer.h" />
+    <ClInclude Include="inc\geos\geom\util\LinearComponentExtracter.h" />
+    <ClInclude Include="inc\geos\geom\util\PointExtracter.h" />
+    <ClInclude Include="inc\geos\geom\util\PolygonExtracter.h" />
+    <ClInclude Include="inc\geos\geom\util\ShortCircuitedGeometryVisitor.h" />
+    <ClInclude Include="inc\geos\geomgraph\Depth.h" />
+    <ClInclude Include="inc\geos\geomgraph\DirectedEdge.h" />
+    <ClInclude Include="inc\geos\geomgraph\DirectedEdgeStar.h" />
+    <ClInclude Include="inc\geos\geomgraph\Edge.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeEnd.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeEndStar.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeIntersection.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeIntersectionList.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeList.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeNodingValidator.h" />
+    <ClInclude Include="inc\geos\geomgraph\EdgeRing.h" />
+    <ClInclude Include="inc\geos\geomgraph\GeometryGraph.h" />
+    <ClInclude Include="inc\geos\geomgraph\GraphComponent.h" />
+    <ClInclude Include="inc\geos\geomgraph\Label.h" />
+    <ClInclude Include="inc\geos\geomgraph\Node.h" />
+    <ClInclude Include="inc\geos\geomgraph\NodeFactory.h" />
+    <ClInclude Include="inc\geos\geomgraph\NodeMap.h" />
+    <ClInclude Include="inc\geos\geomgraph\PlanarGraph.h" />
+    <ClInclude Include="inc\geos\geomgraph\Position.h" />
+    <ClInclude Include="inc\geos\geomgraph\Quadrant.h" />
+    <ClInclude Include="inc\geos\geomgraph\TopologyLocation.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\EdgeSetIntersector.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\MonotoneChain.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\MonotoneChainEdge.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\MonotoneChainIndexer.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SegmentIntersector.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SimpleEdgeSetIntersector.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SimpleMCSweepLineIntersector.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SimpleSweepLineIntersector.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SweepLineEvent.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SweepLineEventObj.h" />
+    <ClInclude Include="inc\geos\geomgraph\index\SweepLineSegment.h" />
+    <ClInclude Include="inc\geos\index\ItemVisitor.h" />
+    <ClInclude Include="inc\geos\index\SpatialIndex.h" />
+    <ClInclude Include="inc\geos\index\bintree\Bintree.h" />
+    <ClInclude Include="inc\geos\index\bintree\Interval.h" />
+    <ClInclude Include="inc\geos\index\bintree\Key.h" />
+    <ClInclude Include="inc\geos\index\bintree\Node.h" />
+    <ClInclude Include="inc\geos\index\bintree\NodeBase.h" />
+    <ClInclude Include="inc\geos\index\bintree\Root.h" />
+    <ClInclude Include="inc\geos\index\chain\MonotoneChain.h" />
+    <ClInclude Include="inc\geos\index\chain\MonotoneChainBuilder.h" />
+    <ClInclude Include="inc\geos\index\chain\MonotoneChainOverlapAction.h" />
+    <ClInclude Include="inc\geos\index\chain\MonotoneChainSelectAction.h" />
+    <ClInclude Include="inc\geos\index\quadtree\DoubleBits.h" />
+    <ClInclude Include="inc\geos\index\quadtree\IntervalSize.h" />
+    <ClInclude Include="inc\geos\index\quadtree\Key.h" />
+    <ClInclude Include="inc\geos\index\quadtree\Node.h" />
+    <ClInclude Include="inc\geos\index\quadtree\NodeBase.h" />
+    <ClInclude Include="inc\geos\index\quadtree\Quadtree.h" />
+    <ClInclude Include="inc\geos\index\quadtree\Root.h" />
+    <ClInclude Include="inc\geos\index\strtree\AbstractNode.h" />
+    <ClInclude Include="inc\geos\index\strtree\AbstractSTRtree.h" />
+    <ClInclude Include="inc\geos\index\strtree\Boundable.h" />
+    <ClInclude Include="inc\geos\index\strtree\Interval.h" />
+    <ClInclude Include="inc\geos\index\strtree\ItemBoundable.h" />
+    <ClInclude Include="inc\geos\index\strtree\SIRtree.h" />
+    <ClInclude Include="inc\geos\index\strtree\STRtree.h" />
+    <ClInclude Include="inc\geos\index\sweepline\SweepLineEvent.h" />
+    <ClInclude Include="inc\geos\index\sweepline\SweepLineIndex.h" />
+    <ClInclude Include="inc\geos\index\sweepline\SweepLineInterval.h" />
+    <ClInclude Include="inc\geos\index\sweepline\SweepLineOverlapAction.h" />
+    <ClInclude Include="inc\geos\io\ByteOrderDataInStream.h" />
+    <ClInclude Include="inc\geos\io\ByteOrderValues.h" />
+    <ClInclude Include="inc\geos\io\ParseException.h" />
+    <ClInclude Include="inc\geos\io\StringTokenizer.h" />
+    <ClInclude Include="inc\geos\io\WKBConstants.h" />
+    <ClInclude Include="inc\geos\io\WKBReader.h" />
+    <ClInclude Include="inc\geos\io\WKBWriter.h" />
+    <ClInclude Include="inc\geos\io\WKTReader.h" />
+    <ClInclude Include="inc\geos\io\WKTWriter.h" />
+    <ClInclude Include="inc\geos\io\Writer.h" />
+    <ClInclude Include="inc\geos\noding\FastNodingValidator.h" />
+    <ClInclude Include="inc\geos\noding\IntersectionAdder.h" />
+    <ClInclude Include="inc\geos\noding\IntersectionFinderAdder.h" />
+    <ClInclude Include="inc\geos\noding\IteratedNoder.h" />
+    <ClInclude Include="inc\geos\noding\MCIndexNoder.h" />
+    <ClInclude Include="inc\geos\noding\Noder.h" />
+    <ClInclude Include="inc\geos\noding\NodingValidator.h" />
+    <ClInclude Include="inc\geos\noding\Octant.h" />
+    <ClInclude Include="inc\geos\noding\ScaledNoder.h" />
+    <ClInclude Include="inc\geos\noding\SegmentIntersector.h" />
+    <ClInclude Include="inc\geos\noding\SegmentNode.h" />
+    <ClInclude Include="inc\geos\noding\SegmentNodeList.h" />
+    <ClInclude Include="inc\geos\noding\SegmentString.h" />
+    <ClInclude Include="inc\geos\noding\SimpleNoder.h" />
+    <ClInclude Include="inc\geos\noding\SingleInteriorIntersectionFinder.h" />
+    <ClInclude Include="inc\geos\noding\SinglePassNoder.h" />
+    <ClInclude Include="inc\geos\noding\snapround\HotPixel.h" />
+    <ClInclude Include="inc\geos\noding\snapround\MCIndexPointSnapper.h" />
+    <ClInclude Include="inc\geos\noding\snapround\MCIndexSnapRounder.h" />
+    <ClInclude Include="inc\geos\noding\snapround\SimpleSnapRounder.h" />
+    <ClInclude Include="inc\geos\operation\EndpointInfo.h" />
+    <ClInclude Include="inc\geos\operation\GeometryGraphOperation.h" />
+    <ClInclude Include="inc\geos\operation\IsSimpleOp.h" />
+    <ClInclude Include="inc\geos\operation\buffer\BufferBuilder.h" />
+    <ClInclude Include="inc\geos\operation\buffer\BufferOp.h" />
+    <ClInclude Include="inc\geos\operation\buffer\BufferSubgraph.h" />
+    <ClInclude Include="inc\geos\operation\buffer\OffsetCurveBuilder.h" />
+    <ClInclude Include="inc\geos\operation\buffer\OffsetCurveSetBuilder.h" />
+    <ClInclude Include="inc\geos\operation\buffer\RightmostEdgeFinder.h" />
+    <ClInclude Include="inc\geos\operation\buffer\SubgraphDepthLocater.h" />
+    <ClInclude Include="inc\geos\operation\distance\ConnectedElementLocationFilter.h" />
+    <ClInclude Include="inc\geos\operation\distance\ConnectedElementPointFilter.h" />
+    <ClInclude Include="inc\geos\operation\distance\DistanceOp.h" />
+    <ClInclude Include="inc\geos\operation\distance\GeometryLocation.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\EdgeString.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\LineMergeDirectedEdge.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\LineMergeEdge.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\LineMergeGraph.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\LineMerger.h" />
+    <ClInclude Include="inc\geos\operation\linemerge\LineSequencer.h" />
+    <ClInclude Include="inc\geos\operation\overlay\EdgeSetNoder.h" />
+    <ClInclude Include="inc\geos\operation\overlay\ElevationMatrix.h" />
+    <ClInclude Include="inc\geos\operation\overlay\ElevationMatrixCell.h" />
+    <ClInclude Include="inc\geos\operation\overlay\FuzzyPointLocator.h" />
+    <ClInclude Include="inc\geos\operation\overlay\LineBuilder.h" />
+    <ClInclude Include="inc\geos\operation\overlay\MaximalEdgeRing.h" />
+    <ClInclude Include="inc\geos\operation\overlay\MinimalEdgeRing.h" />
+    <ClInclude Include="inc\geos\operation\overlay\OffsetPointGenerator.h" />
+    <ClInclude Include="inc\geos\operation\overlay\OverlayNodeFactory.h" />
+    <ClInclude Include="inc\geos\operation\overlay\OverlayOp.h" />
+    <ClInclude Include="inc\geos\operation\overlay\OverlayResultValidator.h" />
+    <ClInclude Include="inc\geos\operation\overlay\PointBuilder.h" />
+    <ClInclude Include="inc\geos\operation\overlay\PolygonBuilder.h" />
+    <ClInclude Include="inc\geos\operation\polygonize\EdgeRing.h" />
+    <ClInclude Include="inc\geos\operation\polygonize\PolygonizeDirectedEdge.h" />
+    <ClInclude Include="inc\geos\operation\polygonize\PolygonizeEdge.h" />
+    <ClInclude Include="inc\geos\operation\polygonize\PolygonizeGraph.h" />
+    <ClInclude Include="inc\geos\operation\polygonize\Polygonizer.h" />
+    <ClInclude Include="inc\geos\operation\predicate\RectangleContains.h" />
+    <ClInclude Include="inc\geos\operation\predicate\RectangleIntersects.h" />
+    <ClInclude Include="inc\geos\operation\predicate\SegmentIntersectionTester.h" />
+    <ClInclude Include="inc\geos\operation\relate\EdgeEndBuilder.h" />
+    <ClInclude Include="inc\geos\operation\relate\EdgeEndBundle.h" />
+    <ClInclude Include="inc\geos\operation\relate\EdgeEndBundleStar.h" />
+    <ClInclude Include="inc\geos\operation\relate\RelateComputer.h" />
+    <ClInclude Include="inc\geos\operation\relate\RelateNode.h" />
+    <ClInclude Include="inc\geos\operation\relate\RelateNodeFactory.h" />
+    <ClInclude Include="inc\geos\operation\relate\RelateNodeGraph.h" />
+    <ClInclude Include="inc\geos\operation\relate\RelateOp.h" />
+    <ClInclude Include="inc\geos\operation\valid\ConnectedInteriorTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\ConsistentAreaTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\IsValidOp.h" />
+    <ClInclude Include="inc\geos\operation\valid\QuadtreeNestedRingTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\RepeatedPointTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\SimpleNestedRingTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\SweeplineNestedRingTester.h" />
+    <ClInclude Include="inc\geos\operation\valid\TopologyValidationError.h" />
+    <ClInclude Include="inc\geos\planargraph\DirectedEdge.h" />
+    <ClInclude Include="inc\geos\planargraph\DirectedEdgeStar.h" />
+    <ClInclude Include="inc\geos\planargraph\Edge.h" />
+    <ClInclude Include="inc\geos\planargraph\GraphComponent.h" />
+    <ClInclude Include="inc\geos\planargraph\Node.h" />
+    <ClInclude Include="inc\geos\planargraph\NodeMap.h" />
+    <ClInclude Include="inc\geos\planargraph\PlanarGraph.h" />
+    <ClInclude Include="inc\geos\planargraph\Subgraph.h" />
+    <ClInclude Include="inc\geos\planargraph\algorithm\ConnectedSubgraphFinder.h" />
+    <ClInclude Include="inc\geos\precision\CommonBits.h" />
+    <ClInclude Include="inc\geos\precision\CommonBitsOp.h" />
+    <ClInclude Include="inc\geos\precision\CommonBitsRemover.h" />
+    <ClInclude Include="inc\geos\precision\EnhancedPrecisionOp.h" />
+    <ClInclude Include="inc\geos\precision\GeometrySnapper.h" />
+    <ClInclude Include="inc\geos\precision\LineStringSnapper.h" />
+    <ClInclude Include="inc\geos\precision\SimpleGeometryPrecisionReducer.h" />
+    <ClInclude Include="inc\geos\simplify\DouglasPeuckerLineSimplifier.h" />
+    <ClInclude Include="inc\geos\simplify\DouglasPeuckerSimplifier.h" />
+    <ClInclude Include="inc\geos\simplify\LineSegmentIndex.h" />
+    <ClInclude Include="inc\geos\simplify\TaggedLineSegment.h" />
+    <ClInclude Include="inc\geos\simplify\TaggedLinesSimplifier.h" />
+    <ClInclude Include="inc\geos\simplify\TaggedLineString.h" />
+    <ClInclude Include="inc\geos\simplify\TaggedLineStringSimplifier.h" />
+    <ClInclude Include="inc\geos\simplify\TopologyPreservingSimplifier.h" />
+    <ClInclude Include="inc\geos\util\Assert.h" />
+    <ClInclude Include="inc\geos\util\AssertionFailedException.h" />
+    <ClInclude Include="inc\geos\util\CoordinateArrayFilter.h" />
+    <ClInclude Include="inc\geos\util\GeometricShapeFactory.h" />
+    <ClInclude Include="inc\geos\util\GEOSException.h" />
+    <ClInclude Include="inc\geos\util\IllegalArgumentException.h" />
+    <ClInclude Include="inc\geos\util\math.h" />
+    <ClInclude Include="inc\geos\util\TopologyException.h" />
+    <ClInclude Include="inc\geos\util\UniqueCoordinateArrayFilter.h" />
+    <ClInclude Include="inc\geos\util\UnsupportedOperationException.h" />
+    <ClInclude Include="capi\geos_c.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="inc\geos\algorithm\ConvexHull.inl" />
+    <None Include="inc\geos\geom\Coordinate.inl" />
+    <None Include="inc\geos\geom\CoordinateArraySequenceFactory.inl" />
+    <None Include="inc\geos\geom\Envelope.inl" />
+    <None Include="inc\geos\geom\Geometry.inl" />
+    <None Include="inc\geos\geom\GeometryCollection.inl" />
+    <None Include="inc\geos\geom\GeometryFactory.inl" />
+    <None Include="inc\geos\geom\LineSegment.inl" />
+    <None Include="inc\geos\geom\MultiLineString.inl" />
+    <None Include="inc\geos\geom\MultiPolygon.inl" />
+    <None Include="inc\geos\geom\PrecisionModel.inl" />
+    <None Include="inc\geos\geomgraph\DirectedEdge.inl" />
+    <None Include="inc\geos\geomgraph\GeometryGraph.inl" />
+    <None Include="inc\geos\io\ByteOrderDataInStream.inl" />
+    <None Include="inc\geos\io\WKTReader.inl" />
+    <None Include="inc\geos\noding\MCIndexNoder.inl" />
+    <None Include="inc\geos\noding\SegmentString.inl" />
+    <None Include="inc\geos\noding\snapround\HotPixel.inl" />
+    <None Include="inc\geos\noding\snapround\MCIndexSnapRounder.inl" />
+    <None Include="inc\geos\operation\overlay\MinimalEdgeRing.inl" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
