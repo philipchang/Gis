@@ -1,0 +1,49 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  Type NATIVE Charset "WindowsSimpChinese"
+  Fields 42
+    MapID Char (8) ;
+    ID Char (13) ;
+    Kind_num Char (2) ;
+    Kind Char (30) ;
+    Width Char (3) ;
+    Direction Char (1) ;
+    Toll Char (1) ;
+    Const_St Char (1) ;
+    UndConCRID Char (13) ;
+    SnodeID Char (13) ;
+    EnodeID Char (13) ;
+    FuncClass Char (2) ;
+    Length Char (8) ;
+    DetailCity Char (1) ;
+    Through Char (1) ;
+    UnThruCRID Char (13) ;
+    Ownership Char (1) ;
+    Road_Cond Char (1) ;
+    Special Char (1) ;
+    AdminCodeL Char (6) ;
+    AdminCodeR Char (6) ;
+    Uflag Char (1) ;
+    OnewayCRID Char (13) ;
+    AccessCRID Char (13) ;
+    SpeedClass Char (1) ;
+    LaneNumS2E Char (2) ;
+    LaneNumE2S Char (2) ;
+    LaneNum Char (1) ;
+    Vehcl_Type Char (32) ;
+    Elevated Char (1) ;
+    Structure Char (1) ;
+    UseFeeCRID Char (13) ;
+    UseFeeType Char (1) ;
+    SpdLmtS2E Char (4) ;
+    SpdLmtE2S Char (4) ;
+    SpdSrcS2E Char (1) ;
+    SpdSrcE2S Char (1) ;
+    DC_Type Char (1) ;
+    NoPassCRID Char (13) ;
+    OUTBANCRID Char (13) ;
+    NUMBANCRID Char (13) ;
+    PARKFLAG Char (1) ;

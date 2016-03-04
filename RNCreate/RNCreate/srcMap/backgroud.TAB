@@ -1,0 +1,13 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  Type NATIVE Charset "WindowsSimpChinese"
+  Fields 6
+    MapID Char (8) ;
+    ID Char (13) ;
+    Kind Char (4) ;
+    AdminCode Char (6) ;
+    AOICode Char (13) ;
+    DispClass Char (1) ;

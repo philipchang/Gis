@@ -1,0 +1,23 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  Type NATIVE Charset "WindowsSimpChinese"
+  Fields 16
+    LCD Integer ;
+    DIR Integer ;
+    sPtLCD Integer ;
+    sName Char (64) ;
+    ePtLCD Integer ;
+    eName Char (64) ;
+    RoadName Char (64) ;
+    Lenght Integer ;
+    DirDes Char (64) ;
+    RLCD Integer ;
+    OrderNumber Integer ;
+    Showlev Integer ;
+    Drawlev Integer ;
+    FuncClass Integer ;
+    Kind Char (64) ;
+    BroadcastLev Char (8) ;

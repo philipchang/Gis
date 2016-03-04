@@ -1,0 +1,10 @@
+!table
+!version 300
+!charset WindowsSimpChinese
+
+Definition Table
+  Type NATIVE Charset "WindowsSimpChinese"
+  Fields 3
+    LCD Char (16) ;
+    Name Char (64) ;
+    ShowLev Char (16) ;

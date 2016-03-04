@@ -1,0 +1,16 @@
+Version 300Charset "WindowsSimpChinese"
+Delimiter ","
+CoordSys Earth Projection 1, 0
+Columns 1
+Name Char(64)
+Data
+Pline 3
+118.101914 24.456130
+118.138220 24.465513
+118.175648 24.469100
+    Pen (1,2,0)Pline 4
+118.217246 24.551568
+118.230526 24.519073
+118.232033 24.484465
+118.220545 24.451739
+    Pen (1,2,0)
